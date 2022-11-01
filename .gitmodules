@@ -1,0 +1,4 @@
+git
+[submodule "task3/code2vec"]
+	path = task3/code2vec
+	url = https://github.com/tech-srl/code2vec
