@@ -8,5 +8,5 @@ class Norm(nn.Module):
 
     def forward(self, x):
         mu = x.mean(dim=-1, keepdim=True)
-        sigma_squared = (x * (x - mu) ** 2).mean(dim=-1, keepdim=True)
-        return (x - mu) / ((sigma_squared + self.eps) ** 0.5)
+        sigma_squared = ((x - mu) ** 2).mean(dim=-1, keepdim=True)
+        return (x - mu) / ((sigma_squared + self.eps).sqrt())
